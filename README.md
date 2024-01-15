@@ -151,7 +151,21 @@ abdelilah ALL=(ALL:ALL) ALL
 `sudo apt install cifs-utils samba-client -y`
 
 `flatpak install bottles sticky appimagepool flatseal -y`
+* add spelling cheack to libreffice :
+  `wget  https://languagetool.org/download/LanguageTool-stable.oxt `
+  
+  * Open LibreOffice and go to Tools ▸ Extension Manager ...
+  * In Extension Manager dialog, click Add....
+  * In the Add Extension(s) dialogue, find the extension file for LibreOffice (OXT file type).
+  * Select the extension and click Open to begin installation.
+  * To complete the procedure, click Close and close LibreOffice
+  * The next time you open LibreOffice, the extension should be ready for use.
+  * **this article to help**
+  * https://discourse.aosus.org/t/topic/2300/4
+  * https://discourse.aosus.org/t/topic/2783/3
 
 * extenssion of gnome :
 
   ![enter image description here](https://github.com/hmidani-abdelilah/thing-to-do-debian-12/blob/main/screencapture-extensions-gnome-org.png)
+  
+  
