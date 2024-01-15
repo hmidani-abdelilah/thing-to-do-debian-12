@@ -60,7 +60,7 @@ abdelilah ALL=(ALL:ALL) ALL
 
 | Intel CPU |  AMD CPU |
 |--|--|
-| `sudo apt install intel-microcode -y` | `sudo apt install amd64-microcode -y` |
+| `sudo apt install intel-microcode iucode-tool -y` | `sudo apt install amd64-microcode -y` |
 
 * add repo flathub
 
