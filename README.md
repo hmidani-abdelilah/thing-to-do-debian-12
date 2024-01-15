@@ -58,6 +58,10 @@ abdelilah ALL=(ALL:ALL) ALL
 
 `sudo apt install build-essential gnome-shell-extension-manager flatpak gnome-software-plugin-flatpak gnome-software-plugin-snap snapd -y` 
 
+| Intel CPU |  AMD CPU |
+|--|--|
+| `sudo apt install intel-microcode -y` | `sudo apt install amd64-microcode -y` |
+
 * add repo flathub
 
 `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
@@ -114,16 +118,25 @@ abdelilah ALL=(ALL:ALL) ALL
 `sudo reboot`
 
 `sudo apt update -y && sudo apt full-upgrade -y && flatpack update && flatpak uninstall --unused`
+
 `sudo apt install lm-sensors -y`
+
 `sudo apt install preload -y`
+
 `sudo apt install tldr`
+
 `sudo apt install nmon lolcat locate lsd vim-nox ccze`
+
 `sudo apt install tzdata-legacy`
+** if use laptop install this package**:
+`sudo apt install tlp tlp-rdw acpitool laptop-mode-tools -y `
 
 * **samba ** :
 
 `sudo apt install samba -y`
+
 `testparm`
+
 `sudo apt install cifs-utils samba-client -y`
 
 `flatpak install bottles sticky appimagepool flatseal -y`
