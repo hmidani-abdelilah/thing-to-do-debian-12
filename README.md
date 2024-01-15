@@ -137,7 +137,9 @@ abdelilah ALL=(ALL:ALL) ALL
 `sudo apt install nmon lolcat locate lsd vim-nox ccze`
 
 `sudo apt install tzdata-legacy`
-** if use laptop install this package**:
+
+**if use laptop install this package** :
+
 `sudo apt install tlp tlp-rdw acpitool laptop-mode-tools -y `
 
 * **samba** :
