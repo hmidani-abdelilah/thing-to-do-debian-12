@@ -131,7 +131,7 @@ abdelilah ALL=(ALL:ALL) ALL
 ** if use laptop install this package**:
 `sudo apt install tlp tlp-rdw acpitool laptop-mode-tools -y `
 
-* **samba ** :
+* **samba** :
 
 `sudo apt install samba -y`
 
