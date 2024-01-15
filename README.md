@@ -140,3 +140,7 @@ abdelilah ALL=(ALL:ALL) ALL
 `sudo apt install cifs-utils samba-client -y`
 
 `flatpak install bottles sticky appimagepool flatseal -y`
+
+* extenssion of gnome :
+
+  ![enter image description here](https://github.com/hmidani-abdelilah/thing-to-do-debian-12/blob/main/screencapture-extensions-gnome-org.png)
