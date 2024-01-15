@@ -36,16 +36,25 @@
 `apt install wpasupplicant`
 
 * **add user to sudo**
+  
  * change abdelilah by user
+   
   -- user this command :
+  
 `usermod -aG abdelilah sudo`
+
 -- or this command :
+
 `gpasswd -a abdelilah sudo`
+
 * add this line in file **sudores**
+  
 `nano /etc/sudoers`
+
 ***
 abdelilah ALL=(ALL:ALL) ALL
 ***
+
 `su abdelilah`
 
 * add **/usr/sbin** to **PATH**
@@ -56,7 +65,7 @@ abdelilah ALL=(ALL:ALL) ALL
 
 * install essential package :
 
-`sudo apt install build-essential gnome-shell-extension-manager flatpak gnome-software-plugin-flatpak gnome-software-plugin-snap snapd -y` 
+`sudo apt install build-essential gnome-shell-extension-manager snapd gnome-software-plugin-snap flatpak gnome-software-plugin-flatpak  -y` 
 
 | Intel CPU |  AMD CPU |
 |--|--|
