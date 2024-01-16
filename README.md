@@ -167,5 +167,50 @@ abdelilah ALL=(ALL:ALL) ALL
 * extenssion of gnome :
 
   ![enter image description here](https://github.com/hmidani-abdelilah/thing-to-do-debian-12/blob/main/screencapture-extensions-gnome-org.png)
+
+* this article to enable backports repo or experimental :
   
+-- [Add backpots repo or experimental](https://www.linuxcapable.com/how-to-install-backports-experimental-repository-on-debian/)
+
+> To enable the experimental repository, follow these steps:
+
+* open the  `sources.list`  configuration file by running the following command:
+  
+````bash
+sudo nano /etc/apt/sources.list
+````
+
+* Add the following lines at the end of the file after the lines you previously added for the **backports** repository:
+
+```bash 
+deb http://deb.debian.org/debian experimental main contrib non-free 
+deb-src http://deb.debian.org/debian experimental main contrib non-free
+```
+
+* Save the configuration file by pressing  `CTRL+O`, and then exit with  `CTRL+X`.
+
+* Update the repository list by running the following command:
+* 
+```bash 
+sudo  apt update
+```
+
+Now, you can use the  `-t`  flag with the  `experimental`  keyword in your commands to search and install packages from the experimental repository.
+
+***
+### Searching for Packages in the Experimental Repository
+****
+Use the following command to search for packages in the experimental repository, replacing  `"package-name"`  with the desired package name:
+
+```bash
+sudo  apt search "package-name" -t experimental
+```
+****
+### Installing Packages from the Experimental Repository
+***
+Use the following command to install packages from the experimental repository, replacing  `"package-name"`  with the desired package name:
+
+```bash
+sudo  apt  install  "package-name" -t experimental
+```
   
