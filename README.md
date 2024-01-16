@@ -1,8 +1,12 @@
-`apt update -y && sudo apt full-upgrade -y`
+```bash
+apt update -y && sudo apt full-upgrade -y
+```
 
 *
 
-`nano /etc/apt/sources.list`
+```bash
+nano /etc/apt/sources.list
+```
 
 *
 ***
@@ -25,7 +29,7 @@
 > deb-src http://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
 ***
 
-`sudo apt update -y && sudo apt full-upgrade -y`
+```bash sudo apt update -y && sudo apt full-upgrade -y```
 
 *
 
