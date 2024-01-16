@@ -194,6 +194,23 @@ sudo apt install default-jre -y
 ```bash 
 sudo apt install libreoffice-java-common
 ```
+## Configure Swappiness
+ Decreasing swappiness value is one of the best ways to improve the performance of your system. This forces your Linux system to use RAM, instead of the hard drive. For those of you unfamiliar with Linux swap, check out our post on Linux swap.
+
+Check the current swappiness value by executing:
+```bash
+cat /proc/sys/vm/swappiness # 60 (default)
+```
+
+Open /etc/sysctl.conf file as an administrator:
+```bash
+sudo nano /etc/sysctl.conf
+```
+At the end of the file, add vm.swappiness=10 which will reduce swap usage.
+
+Press `CTRL + O` to save changes and `CTRL + X` to exit the nano editor.
+
+**Now reboot your system for the change to take effect.**
 
 
  -- ***this optional packages*** :
