@@ -29,15 +29,21 @@ nano /etc/apt/sources.list
 > deb-src http://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
 ***
 
-```bash sudo apt update -y && sudo apt full-upgrade -y```
+```bash
+sudo apt update -y && sudo apt full-upgrade -y
+```
 
 *
 
-`apt install firmware-iwlwifi firmware-misc-nonfree`
+```bash 
+apt install firmware-iwlwifi firmware-misc-nonfree
+```
 
 *
 
-`apt install wpasupplicant`
+```bash 
+apt install wpasupplicant
+```
 
 * **add user to sudo**
   
@@ -45,31 +51,45 @@ nano /etc/apt/sources.list
    
   -- user this command :
   
-`usermod -aG abdelilah sudo`
+```bash
+usermod -aG abdelilah sudo
+```
 
 -- or this command :
 
-`gpasswd -a abdelilah sudo`
+```bash
+gpasswd -a abdelilah sudo
+```
 
 * add this line in file **sudores**
   
-`nano /etc/sudoers`
+```bash 
+nano /etc/sudoers
+```
 
 ***
-abdelilah ALL=(ALL:ALL) ALL
+> abdelilah ALL=(ALL:ALL) ALL
 ***
 
-`su abdelilah`
+```bash 
+su abdelilah
+```
 
 * add **/usr/sbin** to **PATH**
 
-`export PATH="/usr/sbin/:$PATH"` 
+```bash 
+export PATH="/usr/sbin/:$PATH"
+``` 
 
-`echo  PATH="/usr/sbin/:$PATH" > .bashrc`
+```bash 
+echo  PATH="/usr/sbin/:$PATH" > .bashrc
+```
 
 * install essential package :
 
-`sudo apt install build-essential gnome-shell-extension-manager snapd gnome-software-plugin-snap flatpak gnome-software-plugin-flatpak  -y` 
+```bash 
+sudo apt install build-essential gnome-shell-extension-manager snapd gnome-software-plugin-snap flatpak gnome-software-plugin-flatpak  -y
+``` 
 
 | Intel CPU |  AMD CPU |
 |--|--|
@@ -77,86 +97,156 @@ abdelilah ALL=(ALL:ALL) ALL
 
 * add repo flathub
 
-`flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
+```bash 
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
 
- `sudo apt install gnome-tweaks`
+ ```bash 
+ sudo apt install gnome-tweaks
+```
 
-`sudo apt install ufw -y`
+```bash 
+sudo apt install ufw -y
+```
 
-`sudo ufw enable`
+```bash 
+sudo ufw enable
+```
 
-`sudo ufw default deny incoming`
+```bash
+sudo ufw default deny incoming
+```
 
-`sudo ufw default allow outgoing`
+```bash
+sudo ufw default allow outgoing
+```
 
-`sudo ufw allow ssh`
+```bash
+sudo ufw allow ssh
+```
 
-`sudo apt install gufw gir1.2-javascriptcoregtk-4.0 gir1.2-soup-2.4 gir1.2-webkit2-4.0 libsoup-gnome2.4-1 libwebkit2gtk-4.0-37`
+```bash
+sudo apt install gufw gir1.2-javascriptcoregtk-4.0 gir1.2-soup-2.4 gir1.2-webkit2-4.0 libsoup-gnome2.4-1 libwebkit2gtk-4.0-37
+```
 
-`sudo apt install gparted gimp inkscape ffmpeg default-jdk git wget nano vim htop locate p7zip p7zip-full unzip rar unrar libavcodec-extra -y` 
+```bash
+sudo apt install gparted gimp inkscape ffmpeg default-jdk git wget nano vim htop locate p7zip p7zip-full unzip rar unrar libavcodec-extra -y
+``` 
 
-`wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+```
 
-`sudo dpgk -i google-chrome-stable_current_amd64.deb`
+```bash
+sudo dpgk -i google-chrome-stable_current_amd64.deb
+```
 
-`sudo apt --fix-broken install`
+```bash 
+sudo apt --fix-broken install
+```
 
-`sudo timedatectl list-timezones`
+```bash 
+sudo timedatectl list-timezones
+```
 
-`sudo timedatectl set-timezone Africa/Casablanca`
+```bash 
+sudo timedatectl set-timezone Africa/Casablanca
+```
 
-`sudo timedatectl set-ntp yes`
+```bash 
+sudo timedatectl set-ntp yes
+```
 
-`sudo timedatectl set-timezone Africa/Casablanca --adjust-system-clock`
-
-
-`sudo apt install gir1.2-gda-5.0 gir1.2-gsound-1.0 -y`
-
-`sudo apt install libreoffice-l10n-ar libreoffice-l10n-fr -y`
-
-`sudo apt install default-jdk -y`
-
-`sudo apt install default-jre -y`
-
-`sudo apt install libreoffice-java-common`
+```bash 
+sudo timedatectl set-timezone Africa/Casablanca --adjust-system-clock
+```
 
 
--- this optional packages :
+```bash 
+sudo apt install gir1.2-gda-5.0 gir1.2-gsound-1.0 -y
+```
 
-`sudo apt install ant ant-optional auto-multiple-choice-doc-pdf firebird3.0-common firebird3.0-common-doc firebird3.0-server-core firebird3.0-utils fonts-crosextra-caladea fonts-crosextra-carlito fonts-linuxlibertine fonts-noto-core fonts-noto-extra fonts-noto-ui-core fonts-sil-gentium fonts-sil-gentium-basic hyphen-fr java-wrappers libaccessodf-java libactivation-java libapache-pom-java libandroid-json-java libbase-java libbatik-java libbcmail-java libbcpkix-java libbcprov-java libbcutil-java libbsh-java libcommons-cli-java libcommons-collections3-java libcommons-io-java libcommons-logging-java libcommons-parent-java libehcache-java libel-api-java libfbclient2 libflute-java libfonts-java libformula-java libhsqldb1.8.0-java libib-util libitext-java libjaxb-api-java libjaxp1.3-java libjcommon-java libjodconverter-java libjodconverter-java-doc libjsp-api-java liblayout-java libloader-java libmail-java libmariadb3 libofficebean-java libpentaho-reporting-flow-engine-java libpixie-java libpq5 libreoffice libreoffice-base libreoffice-base-drivers libreoffice-gtk4 libreoffice-help-fr libreoffice-nlpsolver libreoffice-report-builder libreoffice-report-builder-bin libreoffice-script-provider-bsh libreoffice-script-provider-js libreoffice-script-provider-python libreoffice-sdbc-firebird libreoffice-sdbc-hsqldb libreoffice-sdbc-mysql libreoffice-sdbc-postgresql libreoffice-uiconfig-base libreoffice-uiconfig-report-builder libreoffice-wiki-publisher librepository-java libsac-java libserializer-java libservlet-api-java libservlet3.1-java libslf4j-java libtommath1 libwebsocket-api-java libwriter2latex-java libwriter2latex-java-doc libxalan2-java libxerces2-java libxml-commons-external-java libxml-commons-resolver1.1-java libxml-java libxmlgraphics-commons-java libxpp3-java libxstream-java mariadb-common mysql-common mythes-fr tex-common -y` 
+```bash 
+sudo apt install libreoffice-l10n-ar libreoffice-l10n-fr -y
+```
+
+```bash 
+sudo apt install default-jdk -y
+```
+
+```bash 
+sudo apt install default-jre -y
+```
+
+```bash 
+sudo apt install libreoffice-java-common
+```
+
+
+ -- ***this optional packages*** :
+
+```bash 
+sudo apt install ant ant-optional auto-multiple-choice-doc-pdf firebird3.0-common firebird3.0-common-doc firebird3.0-server-core firebird3.0-utils fonts-crosextra-caladea fonts-crosextra-carlito fonts-linuxlibertine fonts-noto-core fonts-noto-extra fonts-noto-ui-core fonts-sil-gentium fonts-sil-gentium-basic hyphen-fr java-wrappers libaccessodf-java libactivation-java libapache-pom-java libandroid-json-java libbase-java libbatik-java libbcmail-java libbcpkix-java libbcprov-java libbcutil-java libbsh-java libcommons-cli-java libcommons-collections3-java libcommons-io-java libcommons-logging-java libcommons-parent-java libehcache-java libel-api-java libfbclient2 libflute-java libfonts-java libformula-java libhsqldb1.8.0-java libib-util libitext-java libjaxb-api-java libjaxp1.3-java libjcommon-java libjodconverter-java libjodconverter-java-doc libjsp-api-java liblayout-java libloader-java libmail-java libmariadb3 libofficebean-java libpentaho-reporting-flow-engine-java libpixie-java libpq5 libreoffice libreoffice-base libreoffice-base-drivers libreoffice-gtk4 libreoffice-help-fr libreoffice-nlpsolver libreoffice-report-builder libreoffice-report-builder-bin libreoffice-script-provider-bsh libreoffice-script-provider-js libreoffice-script-provider-python libreoffice-sdbc-firebird libreoffice-sdbc-hsqldb libreoffice-sdbc-mysql libreoffice-sdbc-postgresql libreoffice-uiconfig-base libreoffice-uiconfig-report-builder libreoffice-wiki-publisher librepository-java libsac-java libserializer-java libservlet-api-java libservlet3.1-java libslf4j-java libtommath1 libwebsocket-api-java libwriter2latex-java libwriter2latex-java-doc libxalan2-java libxerces2-java libxml-commons-external-java libxml-commons-resolver1.1-java libxml-java libxmlgraphics-commons-java libxpp3-java libxstream-java mariadb-common mysql-common mythes-fr tex-common -y
+``` 
 
 
 * **reboot your system**
   
-`sudo reboot`
+```bash 
+sudo reboot
+```
 
-`sudo apt update -y && sudo apt full-upgrade -y && flatpack update && flatpak uninstall --unused`
+```bash
+sudo apt update -y && sudo apt full-upgrade -y && flatpack update && flatpak uninstall --unused
+```
 
-`sudo apt install lm-sensors -y`
+```bash
+sudo apt install lm-sensors -y
+```
 
-`sudo apt install preload -y`
+```bash
+sudo apt install preload -y
+```
 
-`sudo apt install tldr`
+```bash
+sudo apt install tldr
+```
 
-`sudo apt install nmon lolcat locate lsd vim-nox ccze`
+```bash
+sudo apt install nmon lolcat locate lsd vim-nox ccze
+```
 
-`sudo apt install tzdata-legacy`
+```bash
+sudo apt install tzdata-legacy
+```
 
 **if use laptop install this package** :
 
-`sudo apt install tlp tlp-rdw acpitool laptop-mode-tools -y `
+```bash
+sudo apt install tlp tlp-rdw acpitool laptop-mode-tools -y
+```
 
 * **samba** :
 
-`sudo apt install samba -y`
+```bash
+sudo apt install samba -y
+```
 
-`testparm`
+```bash
+testparm
+```
 
-`sudo apt install cifs-utils samba-client -y`
+```bash
+sudo apt install cifs-utils samba-client -y
+```
 
-`flatpak install bottles sticky appimagepool flatseal -y`
+```bash
+flatpak install bottles sticky appimagepool flatseal -y
+```
 * add spelling cheack to libreffice :
-  `wget  https://languagetool.org/download/LanguageTool-stable.oxt `
+  ```
+  wget  https://languagetool.org/download/LanguageTool-stable.oxt
+  ```
   
   * Open LibreOffice and go to Tools ▸ Extension Manager ...
   * In Extension Manager dialog, click Add....
