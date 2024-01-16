@@ -96,6 +96,10 @@ sudo apt install build-essential dkms linux-headers-$(uname -r)
 sudo apt install ttf-mscorefonts-installer rar unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi
 ```
 
+```bash
+sudo apt install fonts-crosextra-carlito fonts-crosextra-caladea
+```
+
 ```bash 
 sudo apt install gnome-shell-extension-manager snapd gnome-software-plugin-snap flatpak gnome-software-plugin-flatpak  -y
 ``` 
