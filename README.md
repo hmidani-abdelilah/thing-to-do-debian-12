@@ -269,6 +269,9 @@ testparm
 ```bash
 sudo apt install cifs-utils samba-client -y
 ```
+```bash
+sudo apt install bleachbit
+```
 
 ```bash
 flatpak install bottles sticky appimagepool flatseal -y
