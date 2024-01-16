@@ -86,9 +86,14 @@ echo  PATH="/usr/sbin/:$PATH" > .bashrc
 ```
 
 * install essential package :
+* 
+
+```bash
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+```
 
 ```bash 
-sudo apt install build-essential gnome-shell-extension-manager snapd gnome-software-plugin-snap flatpak gnome-software-plugin-flatpak  -y
+sudo apt install gnome-shell-extension-manager snapd gnome-software-plugin-snap flatpak gnome-software-plugin-flatpak  -y
 ``` 
 
 | Intel CPU |  AMD CPU |
