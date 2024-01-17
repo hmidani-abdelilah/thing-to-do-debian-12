@@ -422,8 +422,42 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20R
 ```bash
 sudo mv MesloLGS-NF /usr/share/fonts
 ```
-* Close and reopen the terminal
+* * Close and reopen the terminal
+
+* LOGOUT and LOGIN⚓︎ 
 
 ```bash
+zsh
+```
+* Download Plugins⚓︎
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/autosuggestions && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/syntax-highlighting && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/plugins/powerlevel10k
+```
+* Install Plugins⚓︎
+
+```bash
+echo -e '\n\n# Plugins\nsource ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme\nsource ~/.config/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh\nsource ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.config/zsh/.zshrc
+```
+* 
+```bash
+echo -e '\n\n# Plugins\nsource ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme\nsource ~/.config/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh\nsource ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.config/zsh/.zshrc
+```
+### ZSH as the default shell⚓︎
+* for `root`
+```bash
+sudo -s
 ```
 
+```bash
+chsh -s /bin/zsh root
+```
+```bash
+exit
+```
+* for `user`
+```bash
+chsh -s /bin/zsh $USER
+```
+* LOGOUT and LOGIN⚓︎
+* Open the Terminal and Configure it⚓︎
