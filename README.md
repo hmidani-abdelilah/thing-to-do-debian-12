@@ -353,6 +353,13 @@ sudo apt install tesseract-ocr-ara
 sudo apt install tesseract-ocr-fra
 ```
 
+```bash
+sudo apt install tesseract-ocr-script-arab
+```
+```bash
+sudo apt install tesseract-ocr-script-frak
+```
+
 * Arabic only - اللغة العربية فقط
 
 ```bash
