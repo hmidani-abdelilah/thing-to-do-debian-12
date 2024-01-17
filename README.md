@@ -340,4 +340,31 @@ Use the following command to install packages from the experimental repository, 
 ```bash
 sudo  apt  install  "package-name" -t experimental
 ```
-  
+## Tesseract OCR
+
+```bash
+sudo apt install tesseract-ocr
+```
+
+```bash
+sudo apt install tesseract-ocr-ara
+```
+```bash
+sudo apt install tesseract-ocr-fra
+```
+
+* Arabic only - اللغة العربية فقط
+
+```bash
+tesseract -l ara image.png text
+```
+* English only - اللغة الإنجليزية فقط
+
+```bash
+tesseract -l eng image.png text
+```
+* Arabic and English - العربية والإنجليزية معًا
+
+```bash
+tesseract -l ara+eng image.png text
+```
