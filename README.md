@@ -375,3 +375,23 @@ tesseract -l eng image.png text
 ```bash
 tesseract -l ara+eng image.png text
 ```
+## ZRAM
+* Install:
+  
+```bash
+sudo apt install zram-tools
+```
+
+* Configure it to allow up to 60% of the RAM to be used as a zstd compressed swap space:
+  
+```bash
+echo -e "ALGO=zstd\nPERCENT=70" | sudo tee -a /etc/default/zramswap
+```
+>>I set it to 80%
+* Restart the service :
+  
+```bash
+sudo service zramswap reload
+```
+
+
