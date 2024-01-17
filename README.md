@@ -393,5 +393,37 @@ echo -e "ALGO=zstd\nPERCENT=70" | sudo tee -a /etc/default/zramswap
 ```bash
 sudo service zramswap reload
 ```
+## ZSH
 
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+* Install Packages⚓︎
+
+```bash
+sudo apt install zsh ranger git wget
+```
+* Create the Folders⚓︎
+
+```bash
+mkdir -p ~/.config/zsh/plugins && mkdir -p ~/.cache/zsh
+```
+* Move '.zshrc' file to '$HOME/.config/zsh'⚓︎
+
+```bash
+echo -e '\n\n# zsh\nexport ZDOTDIR="$HOME/.config/zsh"' >> ~/.profile
+```
+* Download Fonts⚓︎
+  
+```bash
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ./MesloLGS-NF
+```
+
+```bash
+sudo mv MesloLGS-NF /usr/share/fonts
+```
+* Close and reopen the terminal
+
+```bash
+```
 
