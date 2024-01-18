@@ -164,7 +164,7 @@ sudo apt install gufw gir1.2-javascriptcoregtk-4.0 gir1.2-soup-2.4 gir1.2-webkit
 * install some softwares :
   
 ```bash
-sudo apt install gparted gimp inkscape ffmpeg default-jdk git wget nano vim htop locate p7zip p7zip-full unzip rar unrar libavcodec-extra -y
+sudo apt install gparted gimp inkscape ffmpeg default-jdk git wget nano vim htop locate p7zip p7zip-full unzip rar unrar libavcodec-extra curl -y
 ``` 
 * install google chrome:
   
