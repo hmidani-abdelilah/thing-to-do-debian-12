@@ -38,7 +38,7 @@ nano /etc/apt/sources.list
 sudo apt update -y && sudo apt full-upgrade -y
 ```
 
-* install Driver of WIFI..... non free 
+* install Wi-Fi Drivers..... non free 
 
 ```bash 
 apt install firmware-iwlwifi firmware-misc-nonfree
