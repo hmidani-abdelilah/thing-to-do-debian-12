@@ -2,14 +2,16 @@
 apt update -y && sudo apt full-upgrade -y
 ```
 
-*
+* add contrib non-free non-free-firmware :
 
 ```bash
 nano /etc/apt/sources.list
 ```
 
-*
+* file `sources.list` :
+
 ***
+
 > #deb cdrom:[Debian GNU/Linux testing _Trixie_ - Official Snapshot amd64 DVD Binary-1 with firmware 20231225-03:16]/ trixie main non-free-firmware
 >
 > deb http://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
@@ -27,35 +29,38 @@ nano /etc/apt/sources.list
 > deb http://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
 > 
 > deb-src http://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
+
 ***
+
+* update system
 
 ```bash
 sudo apt update -y && sudo apt full-upgrade -y
 ```
 
-*
+* install Driver of WIFI..... non free 
 
 ```bash 
 apt install firmware-iwlwifi firmware-misc-nonfree
 ```
 
-*
-
+* **wpa-supplicant** is a userspace daemon handling connection and authentication
+in wireless and wired networks.
 ```bash 
 apt install wpasupplicant
 ```
 
 * **add user to sudo**
   
- * change abdelilah by user
+ * * change abdelilah by user
    
-  -- user this command :
+  * - user this command :
   
 ```bash
 usermod -aG abdelilah sudo
 ```
 
--- or this command :
+* - or this command :
 
 ```bash
 gpasswd -a abdelilah sudo
@@ -86,7 +91,7 @@ echo  PATH="/usr/sbin/:$PATH" > .bashrc
 ```
 
 * install essential package :
-* 
+
 
 ```bash
 sudo apt install build-essential dkms linux-headers-$(uname -r)
