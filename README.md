@@ -66,7 +66,7 @@ usermod -aG abdelilah sudo
 gpasswd -a abdelilah sudo
 ```
 
-* add this line in file **sudores**
+* add this line in file [**sudores**](https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file-fr)
   
 ```bash 
 nano /etc/sudoers
@@ -91,27 +91,36 @@ echo  PATH="/usr/sbin/:$PATH" > .bashrc
 ```
 
 * install essential package :
+>> Dynamic Kernel Module System and linux-headers
+>> * DKMS is a framework designed to allow individual kernel modules to be upgraded
+without changing the whole kernel. It is also very easy to rebuild modules as
+you upgrade kernels.
+>> * linux-headers This package provides the architecture-specific kernel header files for
+Linux kernel , generally used for building out-of-tree kernel
+modules.  These files are going to be installed into
 
 
 ```bash
 sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```
-
+* install file archiver and microsoft fonts and media codecs :
+  
 ```bash
 sudo apt install ttf-mscorefonts-installer rar unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi
 ```
-
+* Carlito is metric-compatible with Calibri font and Caladea is metric-compatible with the Cambria font.
+  
 ```bash
 sudo apt install fonts-crosextra-carlito fonts-crosextra-caladea
 ```
-
+* install flatpack and snapd and extension:
 ```bash 
 sudo apt install gnome-shell-extension-manager snapd gnome-software-plugin-snap flatpak gnome-software-plugin-flatpak  -y
-``` 
+```
 
-| Intel CPU |  AMD CPU |
-|--|--|
-| `sudo apt install intel-microcode iucode-tool -y` | `sudo apt install amd64-microcode -y` |
+```bash 
+ sudo apt install gnome-tweaks
+```
 
 * add repo flathub
 
@@ -119,10 +128,15 @@ sudo apt install gnome-shell-extension-manager snapd gnome-software-plugin-snap 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
- ```bash 
- sudo apt install gnome-tweaks
-```
+* correct processor behavior:
+  
+| Intel CPU |  AMD CPU |
+|--|--|
+| `sudo apt install intel-microcode iucode-tool -y` | `sudo apt install amd64-microcode -y` |
 
+
+* Uncomplicated FireWall is a front-end for iptables:
+  
 ```bash 
 sudo apt install ufw -y
 ```
@@ -142,15 +156,18 @@ sudo ufw default allow outgoing
 ```bash
 sudo ufw allow ssh
 ```
-
+* graphical user interface for ufw:
+  
 ```bash
 sudo apt install gufw gir1.2-javascriptcoregtk-4.0 gir1.2-soup-2.4 gir1.2-webkit2-4.0 libsoup-gnome2.4-1 libwebkit2gtk-4.0-37
 ```
-
+* install some softwares :
+  
 ```bash
 sudo apt install gparted gimp inkscape ffmpeg default-jdk git wget nano vim htop locate p7zip p7zip-full unzip rar unrar libavcodec-extra -y
 ``` 
-
+* install google chrome:
+  
 ```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 ```
@@ -162,7 +179,8 @@ sudo dpgk -i google-chrome-stable_current_amd64.deb
 ```bash 
 sudo apt --fix-broken install
 ```
-
+* set correct time zone:
+  
 ```bash 
 sudo timedatectl list-timezones
 ```
@@ -170,7 +188,8 @@ sudo timedatectl list-timezones
 ```bash 
 sudo timedatectl set-timezone Africa/Casablanca
 ```
-
+* enable network time protocole :
+  
 ```bash 
 sudo timedatectl set-ntp yes
 ```
@@ -178,42 +197,48 @@ sudo timedatectl set-ntp yes
 ```bash 
 sudo timedatectl set-timezone Africa/Casablanca --adjust-system-clock
 ```
-
-
+* install libs Dependence of some software clipboard:
+   
 ```bash 
 sudo apt install gir1.2-gda-5.0 gir1.2-gsound-1.0 -y
 ```
-
+* install support langs of libreoffice :
+* 
 ```bash 
 sudo apt install libreoffice-l10n-ar libreoffice-l10n-fr -y
 ```
+* install java jdk - Java Development Kit (JDK) :
 
 ```bash 
 sudo apt install default-jdk -y
 ```
-
+* install java jre - Java Development Kit (JDK) - ava Virtual Machine (JVM):
+  
 ```bash 
 sudo apt install default-jre -y
 ```
-
+* install Java support for LibreOffice (Java classes, scripts, config snippets).
 ```bash 
 sudo apt install libreoffice-java-common
 ```
-## Configure Swappiness
- Decreasing swappiness value is one of the best ways to improve the performance of your system. This forces your Linux system to use RAM, instead of the hard drive. For those of you unfamiliar with Linux swap, check out our post on Linux swap.
 
-Check the current swappiness value by executing:
+## Configure Swappiness
+ * * Decreasing swappiness value is one of the best ways to improve the performance of your system. This forces your Linux system to use RAM, instead of the hard drive. For those of you unfamiliar with Linux swap, check out our post on Linux swap.
+
+* Check the current swappiness value by executing:
+
 ```bash
 cat /proc/sys/vm/swappiness # 60 (default)
 ```
 
-Open /etc/sysctl.conf file as an administrator:
+* Open /etc/sysctl.conf file as an administrator:
+
 ```bash
 sudo nano /etc/sysctl.conf
 ```
-At the end of the file, add vm.swappiness=10 which will reduce swap usage.
-
-Press `CTRL + O` to save changes and `CTRL + X` to exit the nano editor.
+>> At the end of the file, add vm.swappiness=10 which will reduce swap usage.
+>>
+>>Press `CTRL + O` to save changes and `CTRL + X` to exit the nano editor.
 
 **Now reboot your system for the change to take effect.**
 
@@ -230,19 +255,29 @@ sudo apt install ant ant-optional auto-multiple-choice-doc-pdf firebird3.0-commo
 ```bash 
 sudo reboot
 ```
+* update system:
 
 ```bash
 sudo apt update -y && sudo apt full-upgrade -y && flatpack update && flatpak uninstall --unused
 ```
-
+*  hardware health monitoring package for Linux.
+  
 ```bash
 sudo apt install lm-sensors -y
 ```
+* opestional fancontrol:
+```bash
+sudo apt install fancontrol
+```
+* preload monitors applications that users run, and by analyzing this
+data, predicts what applications users might run, and fetches those
+binaries and their dependencies into memory for faster startup times.
 
 ```bash
 sudo apt install preload -y
 ```
-
+* man nice, how to use commans:
+  
 ```bash
 sudo apt install tldr
 ```
@@ -270,17 +305,21 @@ sudo apt install samba -y
 ```bash
 testparm
 ```
-
+* to support windows :
 ```bash
 sudo apt install cifs-utils samba-client -y
 ```
+*  to clean system:
+
 ```bash
 sudo apt install bleachbit
 ```
-
+* install some package with flatpack and install package manager of appimage applications :
+  
 ```bash
 flatpak install bottles sticky appimagepool flatseal -y
 ```
+
 * add spelling cheack to libreffice :
   ```
   wget  https://languagetool.org/download/LanguageTool-stable.oxt
@@ -449,6 +488,7 @@ echo -e '\n\n# Plugins\nsource ~/.config/zsh/plugins/powerlevel10k/powerlevel10k
 echo -e '\n\n# Plugins\nsource ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme\nsource ~/.config/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh\nsource ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.config/zsh/.zshrc
 ```
 ### ZSH as the default shell⚓︎
+
 * for `root`
 ```bash
 sudo -s
