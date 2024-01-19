@@ -269,6 +269,24 @@ sudo apt install lm-sensors -y
 ```bash
 sudo apt install fancontrol
 ```
+```bash
+sudo systemctl enable fancontrol --now
+```
+```bash
+sudo pwmconfig
+```
+* lenovo 
+```bash
+sudo apt install thinkfan
+```
+```bash
+sudo  sensors-detect
+```
+```bash
+sudo apt install gnome-firmware
+```
+```bash
+```
 * preload monitors applications that users run, and by analyzing this
 data, predicts what applications users might run, and fetches those
 binaries and their dependencies into memory for faster startup times.
