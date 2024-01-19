@@ -286,6 +286,7 @@ sudo  sensors-detect
 sudo apt install gnome-firmware
 ```
 ```bash
+sudo apt install glances
 ```
 * preload monitors applications that users run, and by analyzing this
 data, predicts what applications users might run, and fetches those
