@@ -236,6 +236,10 @@ sudo apt install libreoffice-dev
 ```bash
 sudo apt-get install libreoffice-script-provider-python
 ```
+* Libre office Extensions :
+
+![libreoffice extensios](https://github.com/hmidani-abdelilah/thing-to-do-debian-12/blob/main/LibreOffice%20Extension.png)
+
 ## Configure Swappiness
  * * Decreasing swappiness value is one of the best ways to improve the performance of your system. This forces your Linux system to use RAM, instead of the hard drive. For those of you unfamiliar with Linux swap, check out our post on Linux swap.
 
@@ -370,7 +374,7 @@ flatpak install bottles sticky appimagepool flatseal -y
 
 * extenssion of gnome :
 
-  ![enter image description here](https://github.com/hmidani-abdelilah/thing-to-do-debian-12/blob/main/screencapture-extensions-gnome-org.png)
+  ![gnome extensions](https://github.com/hmidani-abdelilah/thing-to-do-debian-12/blob/main/screencapture-extensions-gnome-org.png)
 
 * this article to enable backports repo or experimental :
   
