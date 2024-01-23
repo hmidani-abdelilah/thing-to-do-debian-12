@@ -206,7 +206,7 @@ sudo timedatectl set-timezone Africa/Casablanca --adjust-system-clock
 sudo apt install gir1.2-gda-5.0 gir1.2-gsound-1.0 -y
 ```
 * install support langs of libreoffice :
-* 
+
 ```bash 
 sudo apt install libreoffice-l10n-ar libreoffice-l10n-fr -y
 ```
@@ -228,7 +228,9 @@ sudo apt install libreoffice-java-common
 ```bash
 sudo apt install libreoffice-dev
 ```
-* * ```bash libreoffice_convert pdf document.docx ```
+* * ```bash 
+libreoffice_convert pdf document.docx 
+```
 
 * Code snippet highlighter for LibreOffice.
 [Code Highlighter](https://github.com/jmzambon/libreoffice-code-highlighter)
