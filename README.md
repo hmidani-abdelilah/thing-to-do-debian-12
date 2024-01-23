@@ -114,6 +114,9 @@ sudo apt install ttf-mscorefonts-installer rar unrar libavcodec-extra gstreamer1
 sudo apt install fonts-crosextra-carlito fonts-crosextra-caladea
 ```
 * install flatpack and snapd and extension:
+```bash
+sudo apt install gnome-shell-extension-manager gir1.2-gtop-2.0 lm-sensors
+```
 ```bash 
 sudo apt install gnome-shell-extension-manager snapd gnome-software-plugin-snap flatpak gnome-software-plugin-flatpak  -y
 ```
