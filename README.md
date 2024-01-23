@@ -221,6 +221,11 @@ sudo apt install default-jre -y
 ```bash 
 sudo apt install libreoffice-java-common
 ```
+* libreoffice convert:
+```bash
+sudo apt install libreoffice-dev
+```
+* * ```bash libreoffice_convert pdf document.docx ```
 
 ## Configure Swappiness
  * * Decreasing swappiness value is one of the best ways to improve the performance of your system. This forces your Linux system to use RAM, instead of the hard drive. For those of you unfamiliar with Linux swap, check out our post on Linux swap.
