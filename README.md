@@ -230,6 +230,12 @@ sudo apt install libreoffice-dev
 ```
 * * ```bash libreoffice_convert pdf document.docx ```
 
+* Code snippet highlighter for LibreOffice.
+[Code Highlighter](https://github.com/jmzambon/libreoffice-code-highlighter)
+
+```bash
+sudo apt-get install libreoffice-script-provider-python
+```
 ## Configure Swappiness
  * * Decreasing swappiness value is one of the best ways to improve the performance of your system. This forces your Linux system to use RAM, instead of the hard drive. For those of you unfamiliar with Linux swap, check out our post on Linux swap.
 
