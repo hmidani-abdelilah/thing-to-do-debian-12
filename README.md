@@ -228,7 +228,8 @@ sudo apt install libreoffice-java-common
 ```bash
 sudo apt install libreoffice-dev
 ```
-* * ```bash 
+* **exemple** 
+```bash 
 libreoffice_convert pdf document.docx 
 ```
 
