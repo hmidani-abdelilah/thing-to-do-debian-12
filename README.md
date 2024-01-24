@@ -349,6 +349,16 @@ testparm
 ```bash
 sudo apt install cifs-utils samba-client -y
 ```
+```bash
+sudo apt install winbind
+```
+to mount by terminal:
+* * change user by your user and password by your password .
+
+```bash
+mount -v -t cifs //192.168.1.22/Admin /mnt/winshare -o 'user=Admin,password=pass,dir_mode=0755,file_mode=0755,iocharset=utf8,vers=3.0'
+```
+
 *  to clean system:
 
 ```bash
