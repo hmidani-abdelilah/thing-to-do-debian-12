@@ -556,3 +556,28 @@ chsh -s /bin/zsh $USER
 ```
 * LOGOUT and LOGIN⚓︎
 * Open the Terminal and Configure it⚓︎
+  ## plymouth
+```bash
+sudo apt install plymouth plymouth-themes
+```
+```bash
+sudo plymouth-set-default-theme -l
+```
+```bash
+sudo  plymouth-set-default-theme -R softwaves
+```
+```bash
+sudo nano /etc/default/grub
+```
+>> `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"`
+```bash
+sudo update-grub
+```
+#### test plymouth 
+
+```bash
+sudo apt install plymouth-x11
+```
+```bash
+sudo plymouthd ; sudo plymouth --show-splash ; sleep 10 ; sudo killall plymouthd
+```
