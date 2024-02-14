@@ -581,3 +581,42 @@ sudo apt install plymouth-x11
 ```bash
 sudo plymouthd ; sudo plymouth --show-splash ; sleep 10 ; sudo killall plymouthd
 ```
+# add multimedia codecs extra (Do not use it until you have to)
+```bash
+sudo apt install libavformat-extra
+```
+```bash
+sudo apt install libavcodec60
+```
+```bash
+sudo apt install libavcodec-extra60
+```
+```bash
+sudo apt install libavcodec-extra
+```
+```bash
+sudo nano /etc/apt/sources.list.d/multimedia.list
+```
+** add thi line 
+
+>> `deb http://www.deb-multimedia.org sid main non-free`
+
+```bash
+sudo apt install deb-multimedia-keyring
+```
+** or ** 
+```bash
+wget wget https://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb
+```
+```bash
+sudo apt update -y
+```
+```bash
+sudo apt-get update -oAcquire::AllowInsecureRepositories=true
+```
+```bash
+sudo apt install libavutil58 libavcodec-extra
+```
+```bash
+sudo apt install -t experimental libswscale-dev libswscale
+```
