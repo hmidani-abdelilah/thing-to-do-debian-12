@@ -597,14 +597,14 @@ sudo apt install libavcodec-extra
 ```bash
 sudo nano /etc/apt/sources.list.d/multimedia.list
 ```
-** add thi line 
+* add thi line 
 
 >> `deb http://www.deb-multimedia.org sid main non-free`
 
 ```bash
 sudo apt install deb-multimedia-keyring
 ```
-** or ** 
+**or** 
 ```bash
 wget wget https://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb
 ```
