@@ -620,3 +620,33 @@ sudo apt install libavutil58 libavcodec-extra
 ```bash
 sudo apt install -t experimental libswscale-dev libswscale
 ```
+* logs
+```bash
+sudo nano /etc/systemd/journald.conf
+```
+>>change `#Storage=auto` to `Storage=persistent`
+
+```bash
+sudo systemctl restart systemd-journald
+```
+
+```bash
+sudo journalctl --flush
+```
+
+```bash
+sudo usermod -aG systemd-journal $USER
+```
+* install rsyslog
+  
+```bash
+sudo apt update -y && sudo apt install rsyslog
+```
+
+```bash
+sudo systemctl enable --now rsyslog
+```
+
+```bash
+sudo systemctl status rsyslog
+```
