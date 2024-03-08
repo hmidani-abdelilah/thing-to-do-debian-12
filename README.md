@@ -352,6 +352,10 @@ sudo apt install cifs-utils samba-client -y
 ```bash
 sudo apt install winbind
 ```
+```bash
+sudo apt install system-config-printer samba smbclient python3-smbc cups cifs-utils
+```
+
 to mount by terminal:
 * * change user by your user and password by your password .
 
