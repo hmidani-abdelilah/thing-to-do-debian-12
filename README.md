@@ -1,3 +1,4 @@
+
 ```bash
 apt update -y && sudo apt full-upgrade -y
 ```
@@ -38,6 +39,33 @@ nano /etc/apt/sources.list
 sudo apt update -y && sudo apt full-upgrade -y
 ```
 
+* grub2 to remember last choice - dual boot
+
+1. Boot into your Linux distribution: that uses the GRUB bootloader.
+2. Open the GRUB configuration file: in a text editor with superuser privileges:
+
+```bash
+sudo nano /etc/default/grub
+```
+- Modify the GRUB_DEFAULT line: to include saved: ```GRUB_DEFAULT=0```
+
+```bash
+GRUB_DEFAULT=saved
+```
+- If the line doesn't exist, add it.
+- Add the GRUB_SAVEDEFAULT line: if it's not already there: 
+
+```bash
+GRUB_SAVEDEFAULT=true
+```
+
+- Save and close the file. In nano, you'd press Ctrl + X, then Y, then Enter. 
+- Update the GRUB configuration: 
+
+```bash
+sudo update-grub
+```
+
 * install Wi-Fi Drivers..... non free 
 
 ```bash 
@@ -46,6 +74,7 @@ apt install firmware-iwlwifi firmware-misc-nonfree
 
 * **wpa-supplicant** is a userspace daemon handling connection and authentication
 in wireless and wired networks.
+
 ```bash 
 apt install wpasupplicant
 ```
