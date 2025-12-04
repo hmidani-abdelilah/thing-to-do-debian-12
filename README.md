@@ -705,7 +705,28 @@ sudo scanimage -L
 scanimage > image.pnm
 ```
 * Install the printer-driver-gutenprint package:
-  
+  * * https://wiki.debian.org/Printing
 ```bash
 sudo apt install printer-driver-gutenprint
+```
+* hp driver printers
+  
+```bash
+sudo apt update && sudo apt install hplip
+```
+
+Connect the printer:
+
+Connect your HP printer to your computer via USB and turn it on.
+
+Run the setup tool:
+
+In the terminal, run the hp-setup command without root privileges.
+
+```bash
+hp-setup -i
+```
+https://wiki.debian.org/SystemPrinting
+```bash
+sudo apt install printer-driver-all
 ```
