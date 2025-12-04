@@ -731,4 +731,7 @@ https://wiki.debian.org/SystemPrinting
 sudo apt install printer-driver-all
 ```
 * canon lbp XXXX
+  
 https://github.com/hmidani-abdelilah/ubuntu_canon_printer
+
+http://help.ubuntu.ru/wiki/canon_capt
