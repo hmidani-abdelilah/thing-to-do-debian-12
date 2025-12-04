@@ -636,7 +636,9 @@ sudo nano /etc/apt/sources.list.d/multimedia.list
 >> `deb http://www.deb-multimedia.org sid main non-free`
 
 ```bash
-sudo apt install deb-multimedia-keyring
+sudo apt install deb-multimedia-keyringInstall the printer-driver-gutenprint package:
+
+sudo apt install printer-driver-gutenprint
 ```
 **or** 
 ```bash
@@ -701,4 +703,9 @@ sudo scanimage -L
 
 ```bash
 scanimage > image.pnm
+```
+* Install the printer-driver-gutenprint package:
+  
+```bash
+sudo apt install printer-driver-gutenprint
 ```
