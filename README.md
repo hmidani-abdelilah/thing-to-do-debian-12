@@ -403,7 +403,7 @@ sudo apt install bleachbit
 flatpak install bottles sticky appimagepool flatseal -y
 ```
 
-* add spelling cheack to libreffice :
+* add spelling cheack to libreoffice :
   ```
   wget  https://languagetool.org/download/LanguageTool-stable.oxt
   ```
@@ -730,3 +730,5 @@ https://wiki.debian.org/SystemPrinting
 ```bash
 sudo apt install printer-driver-all
 ```
+* canon lbp XXXX
+https://github.com/hmidani-abdelilah/ubuntu_canon_printer
