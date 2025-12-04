@@ -615,6 +615,7 @@ sudo apt install plymouth-x11
 sudo plymouthd ; sudo plymouth --show-splash ; sleep 10 ; sudo killall plymouthd
 ```
 # add multimedia codecs extra (Do not use it until you have to)
+
 ```bash
 sudo apt install libavformat-extra
 ```
@@ -654,6 +655,7 @@ sudo apt install libavutil58 libavcodec-extra
 sudo apt install -t experimental libswscale-dev libswscale
 ```
 * logs
+  
 ```bash
 sudo nano /etc/systemd/journald.conf
 ```
@@ -682,4 +684,21 @@ sudo systemctl enable --now rsyslog
 
 ```bash
 sudo systemctl status rsyslog
+```
+* install driver scanner
+* https://wiki.debian.org/Scanner
+  
+```bash
+sudo apt-get install sane-utils xsane libusb-dev
+```
+
+```bash
+sudo sane-find-scanner
+```
+```bash
+sudo scanimage -L
+```
+
+```bash
+scanimage > image.pnm
 ```
