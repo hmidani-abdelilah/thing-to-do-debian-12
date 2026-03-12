@@ -384,6 +384,13 @@ sudo apt install winbind
 ```bash
 sudo apt install system-config-printer samba smbclient python3-smbc cups cifs-utils
 ```
+```bash
+sudo apt install hplip hplip-gui
+sudo usermod -a -G lpadmin $USER
+sudo hp-plugin -i
+sudo apt install cups cups-client foomatic-db
+
+```
 
 to mount by terminal:
 * * change user by your user and password by your password .
