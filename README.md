@@ -742,3 +742,11 @@ sudo apt install printer-driver-all
 https://github.com/hmidani-abdelilah/ubuntu_canon_printer
 
 http://help.ubuntu.ru/wiki/canon_capt
+
+### conky 
+```bash
+sudo apt install conky-all fonts-weather-icons jq
+```
+```bash
+conky -c  /home/$USER/.conky/mx
+``` 
