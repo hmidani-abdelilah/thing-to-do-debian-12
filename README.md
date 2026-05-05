@@ -750,3 +750,13 @@ sudo apt install conky-all fonts-weather-icons jq
 ```bash
 conky -c  /home/$USER/.conky/mx
 ``` 
+cd ~/.config/autostart/
+nano conkyrun.desktop
+
+[Desktop Entry]
+Type=Application
+Name=My conky
+Exec=sh -c "sleep 5 && conky -c  /home/xq/.conky/mx
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
