@@ -749,6 +749,10 @@ sudo apt install conky-all fonts-weather-icons jq
 ```
 ```bash
 conky -p 10 -c  /home/$USER/.conky/mx
-``` 
+```
+
+```bash
 cd ~/.config/autostart/
 nano conkyrun.desktop
+sudo update-desktop-database
+``` 
