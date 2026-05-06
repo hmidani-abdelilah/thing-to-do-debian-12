@@ -1,7 +1,7 @@
 #!/bin/bash
 # sudo apt install fonts-weather-icons jq
 # sudo fc-cache -fv
-CITY="Fes"
+CITY="Meknes"
 COUNTRY="MA"
 UNITS="metric"
 API_KEY="e27440052753656b42d142595d2fc267"

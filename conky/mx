@@ -89,11 +89,11 @@ ${font}Core 3  ${color3}${execi 4 sensors | grep 'Core 3' | cut -c17-24} ${align
 ${voffset -8}${font Open Sans:Bold:size=14}${color0}NETWORK ${color EC0100}${hr 3}$color
 $color${font Open Sans:bold:size=8,5}External IP ${font}${alignr}${execi 60 sh -c "IP=$(dig +short TXT o-o.myaddr.l.google.com @ns1.google.com 2>/dev/null | awk -F'\"' '{print $2}'); [ -z \"\$IP\" ] && IP=$(curl -s ifconfig.me); echo \$IP"}${font}
 ${voffset -5}$alignc${execpi 4 echo "\${font}\${color}ping: \${font Open Sans:bold:size=8,5}\${color6}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
-${voffset -10}${font Open Sans:bold:size=8,5}Ethernet $font$alignr ${addr enp8s0}
-${font MesloLGS NF:size=12}${color red}↑${color}${font}${upspeedf enp8s0} kb/s $alignr ${totalup enp8s0}
-${voffset -14}$alignc${upspeedgraph enp8s0 10,120  ff0000 0000ff}
-${font MesloLGS NF:size=12}${color0}↓${color}${font}${downspeedf enp8s0} kb/s $alignr ${totaldown enp8s0}
-${voffset -14}$alignc${downspeedgraph enp8s0 10,120  ff0000 0000ff}
+${voffset -10}${font Open Sans:bold:size=8,5}Ethernet $font$alignr ${addr eno1}
+${font MesloLGS NF:size=12}${color red}↑${color}${font}${upspeedf eno1} kb/s $alignr ${totalup eno1}
+${voffset -14}$alignc${upspeedgraph eno1 10,120  ff0000 0000ff}
+${font MesloLGS NF:size=12}${color0}↓${color}${font}${downspeedf eno1} kb/s $alignr ${totaldown eno1}
+${voffset -14}$alignc${downspeedgraph eno1 10,120  ff0000 0000ff}
 
 ${voffset -10}${font Open Sans:bold:size=8,5}WiFi $font${wireless_bitrate wlx8c18d9877863} $alignr ${addr wlx8c18d9877863}
 ${voffset -14}$alignc${wireless_essid wlx8c18d9877863}
@@ -118,7 +118,7 @@ ${endif}
 # Mounted
 ${voffset -25}${font Open Sans:Bold:size=14}${color0}Disk Mounts ${color1}${hr 3}$color$font
 
-${execpi 10  sh semplice-conky-harddisks.sh}
+${execpi 10  sh /home/xq/.conky/semplice-conky-harddisks.sh}
 
-${execpi 10 sh weather.sh}
+#${execpi 10 sh /home/xq/.conky/weather.sh}
 ]];
