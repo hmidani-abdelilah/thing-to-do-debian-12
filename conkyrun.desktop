@@ -1,7 +1,9 @@
 [Desktop Entry]
 Type=Application
 Name=My conky 
-Exec=sh -c "sleep 5 && conky -c  /home/xq/.conky/mx
+Exec=conky -p 10 -c  /home/xq/.conky/mx 
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
+X-GNOME-AutoRestart=true
+Comment=Start Conky on login
