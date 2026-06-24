@@ -781,3 +781,26 @@ cat /sys/module/apparmor/parameters/enabled
 ```bash
 sudo journalctl -k | grep "apparmor.*DENIED"
 ```
+
+1. Enable and Start the Service
+```bash
+sudo systemctl enable --now apparmor
+```
+2. Verify the Status
+
+```bash
+sudo systemctl status apparmor
+sudo aa-status
+```
+
+## Troubleshooting: If AppArmor is still disabled
+
+1. Open the GRUB configuration file
+2. Edit the boot line: Find the line starting with `GRUB_CMDLINE_LINUX_DEFAULT and ensure it includes apparmor=1 security=apparmor`.
+   1. Example: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash apparmor=1 security=apparmor"
+   2. Save and exit: Press Ctrl+O, then Enter, then Ctrl+X.
+3. Update GRUB and reboot :
+```bash
+sudo update-grub
+sudo reboot
+```
