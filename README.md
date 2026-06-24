@@ -755,4 +755,29 @@ conky -p 10 -c  /home/$USER/.conky/mx
 cd ~/.config/autostart/
 nano conkyrun.desktop
 sudo update-desktop-database
+```
+* enble AppArmor
+```bash
+sudo aa-status
+```
+(Note: sudo apparmor_status does the exact same thing).
+This command provides a detailed breakdown of:
+* Whether the AppArmor kernel module is loadedHow many security profiles are loaded and active
+* Which specific profiles are in Enforce mode (actively blocking threats) or Complain mode (only logging threats)
+* A list of running processes currently confined by AppArmor
+  
+```bash
+sudo systemctl status apparmor
+```
+```bash
+cat /sys/module/apparmor/parameters/enabled
 ``` 
+* `Y` means it is enabled.
+* `N` means it is disabled.
+
+* Check Active Denials (Logs)
+  If you suspect AppArmor is running but actively blocking an application, look at the system logs for `DENIED` entries
+
+```bash
+sudo journalctl -k | grep "apparmor.*DENIED"
+```
