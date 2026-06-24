@@ -804,6 +804,54 @@ sudo aa-status
 sudo update-grub
 sudo reboot
 ```
+
+# Configuration Guide: Qt Applications on Debian GNOME
+
+This guide explains how to theme and configure Qt5 and Qt6 applications so they look and behave like native GNOME/GTK applications.
+
+## 1. Install GNOME Integration Packages
+Install the required platforms, decorations, and plugins. This ensures Qt applications use GNOME styles (like Adwaita) and support Wayland display servers.
+
+```bash
+# Install GNOME platform themes and window decorations for Qt5 and Qt6
+sudo apt install qgnomeplatform-qt5 qadwaitadecorations-qt6 qt6-wayland -y
+```
+
+### Alternative: Kvantum Theme Engine
+If you prefer advanced layout customization or custom SVG themes over the native GNOME look, install the Kvantum engine:
+```bash
+sudo apt install qt5-style-kvantum qt6-style-kvantum kvantum -y
+```
+
+## 2. Configure Environment Variables
+To force Qt applications to respect your GNOME theme and window decorations, you need to export specific environment variables. 
+
+Open your profile configuration file:
+```bash
+nano ~/.profile
+```
+
+Append the following lines to the bottom of the file:
+```bash
+# Force Qt to use the GNOME platform theme
+export QT_QPA_PLATFORMTHEME=gnome
+
+# Set window decoration to Adwaita
+export QT_WAYLAND_DECORATION=adwaita
+
+# Define the display backend (use 'wayland' or fallback to 'xcb' for X11)
+export QT_QPA_PLATFORM=xcb
+```
+*(Note: If you run a pure Wayland session and experience window issues, you can change `xcb` to `wayland`).*
+
+## 3. Apply Changes
+Save and exit the file (`Ctrl+O`, `Enter`, `Ctrl+X`). To apply these environment variables without rebooting your computer, source the profile:
+
+```bash
+source ~/.profile
+```
+
+
 # Rust Installation and Update Guide
 
 Follow these steps to install, verify, and update Rust on your Debian/Ubuntu system.
@@ -861,6 +909,7 @@ Depending on how you installed Rust in Step 2, use **one** of the following meth
 ```bash
 rustup update
 ```
+
 
 ### If installed via APT
 ```bash
