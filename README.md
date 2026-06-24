@@ -804,3 +804,65 @@ sudo aa-status
 sudo update-grub
 sudo reboot
 ```
+# Rust Installation and Update Guide
+
+Follow these steps to install, verify, and update Rust on your Debian/Ubuntu system.
+
+## 1. Prerequisites & System Update
+First, update your system packages and install the necessary build tools, certificates, and curl.
+
+```bash
+# Update package lists and upgrade existing packages
+sudo apt update && sudo apt upgrade -y
+
+# Install required build tools and utilities
+sudo apt install curl ca-certificates build-essential -y
+```
+
+## 2. Install Rust (Recommended Method)
+Use the official `rustup` installer script. This installs the latest stable version of Rust and the Cargo package manager for your user account.
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+*(Follow the on-screen prompts to proceed with the default installation. Afterward, restart your terminal or run `source $HOME/.cargo/env`).*
+
+### Alternative: Install via APT (System-wide)
+If you prefer managing Rust strictly via your system's package manager instead of `rustup`:
+```bash
+sudo apt install rustc cargo
+```
+
+## 3. Verify the Installation
+Check that both the Rust compiler (`rustc`) and Cargo are installed properly.
+
+```bash
+rustc --version && cargo --version
+```
+
+## 4. Test with a "Hello World" Project
+Create a new binary application project to ensure the compiler environment works.
+
+```bash
+# Create a new binary project
+cargo new hello-rust --bin
+
+# Move into the project directory
+cd hello-rust
+
+# Build and run the project
+cargo run
+```
+
+## 5. How to Update Rust
+Depending on how you installed Rust in Step 2, use **one** of the following methods to update it.
+
+### If installed via Rustup (Recommended)
+```bash
+rustup update
+```
+
+### If installed via APT
+```bash
+sudo apt update && sudo apt install --only-upgrade rustc cargo
+```
