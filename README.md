@@ -909,9 +909,19 @@ Depending on how you installed Rust in Step 2, use **one** of the following meth
 ```bash
 rustup update
 ```
-
-
 ### If installed via APT
 ```bash
 sudo apt update && sudo apt install --only-upgrade rustc cargo
 ```
+
+### you may choose to wait a short while for it to continue or force the app gnome
+
+```bash
+gsettings get org.gnome.mutter check-alive-timeout
+```
+
+```bash
+gsettings set org.gnome.mutter check-alive-timeout 10000
+```
+
+
