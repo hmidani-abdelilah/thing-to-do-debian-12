@@ -914,7 +914,9 @@ rustup update
 sudo apt update && sudo apt install --only-upgrade rustc cargo
 ```
 
-### you may choose to wait a short while for it to continue or force the app gnome
+### Fix Error you may choose to wait a short while for it to continue or force the app Gnome
+
+![fix Error you may choose to wait a short while for it to continue or force the app gnome](https://private-user-images.githubusercontent.com/149316569/540450330-05bd166f-a91c-47ca-bfde-5b45d4a85b8e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODIzODUzNDYsIm5iZiI6MTc4MjM4NTA0NiwicGF0aCI6Ii8xNDkzMTY1NjkvNTQwNDUwMzMwLTA1YmQxNjZmLWE5MWMtNDdjYS1iZmRlLTViNDVkNGE4NWI4ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNjI1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDYyNVQxMDU3MjZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yNTI5MGYxZWI0MTJiMTI1ZmYyYTg4NWZjYjkzOTQ5YWVlODkwZWY1NWFkYjJhZGU4ZjJiN2M4OTZiYjQ0YzI1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.ZGqDpnMPsHTMvIj9Qay5SyGdHQG44yc0Z6WbbBA7U-M)
 
 ```bash
 gsettings get org.gnome.mutter check-alive-timeout
