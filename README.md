@@ -153,11 +153,38 @@ sudo apt install gnome-shell-extension-manager snapd gnome-software-plugin-snap 
 ```bash 
  sudo apt install gnome-tweaks
 ```
+* snapd
 
+```bash 
+sudo apt install snapd 
+```
 * add repo flathub
 
 ```bash 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+# Install Telegram Desktop via Flatpak
+
+```bash 
+flatpak install flathub org.telegram.desktop -y
+```
+
+# Install Android Studio via Snap
+```bash
+
+sudo snap install android-studio --classic
+```
+
+# Install Pinta (Photoshop Alternative)
+
+```bash 
+sudo apt install pinta -y
+```
+
+# Install Kdenlive (Video Editing Tool)
+
+```bash
+sudo apt install kdenlive -y
 ```
 
 * correct processor behavior:
@@ -960,7 +987,67 @@ sudo apt install mysql-server -y || sudo apt install mariadb-server
 # Install Redis Server
 
 ```bash
-
 sudo apt install redis-server -y
 ```
 
+* Antigravity Installation
+
+تثبيت أداة Antigravity الرسمية
+# 1. Create the keyrings folder if it doesn't exist
+
+```bash
+sudo mkdir -p /etc/apt/keyrings
+```
+
+# 2. Download the GPG security key
+
+```bash
+curl -fsSL <ANTIGRAVITY_GPG_KEY_URL> | sudo gpg --dearmor --yes -o /etc/apt/keyrings/antigravity-repo-key.gpg
+```
+
+# 3. Add the repository to your source list
+
+```bash
+echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] [ antigravity-debian main" | sudo tee /etc/apt/sources.list.d/antigravity.list > /dev/null
+````
+
+# 4. Update and install the application
+
+```bash
+sudo apt update
+sudo apt install antigravity
+```
+
+Note: Replace <ANTIGRAVITY_GPG_KEY_URL> and <ANTIGRAVITY_REPOSITORY_URL> with the official URLs provided by Antigravity.
+
+* Advanced Terminal Experience (Zsh & Oh My Zsh)
+
+ترقية التيرمينال وتحسين تجربة كتابة الأوامر.
+
+# Install Zsh Shell
+```bash 
+sudo apt install zsh -y
+```
+# Install Oh My Zsh framework
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+💡 Tip
+
+After installing Oh My Zsh, you can add plugins like:
+
+
+
+
+
+zsh-autosuggestions
+
+
+
+zsh-syntax-highlighting
+
+
+
+fzf
+
+These plugins make your terminal experience faster and more productive.
