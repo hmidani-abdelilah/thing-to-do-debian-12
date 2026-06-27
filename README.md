@@ -1051,3 +1051,15 @@ zsh-syntax-highlighting
 fzf
 
 These plugins make your terminal experience faster and more productive.
+
+* Prerequisites & Version Control (Git & Curl)
+
+تحديث النظام وتثبيت أدوات التحكم في الإصدارات.
+# Update system and install Git
+sudo apt update && sudo apt install git -y
+
+# Verify Git installation
+git --version
+
+# Install Curl
+sudo apt install curl -y
