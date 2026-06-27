@@ -905,7 +905,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ### Alternative: Install via APT (System-wide)
 If you prefer managing Rust strictly via your system's package manager instead of `rustup`:
 ```bash
-sudo apt install rustc cargo
+sudo apt install rustc cargo rustfmt
 ```
 
 ## 3. Verify the Installation
