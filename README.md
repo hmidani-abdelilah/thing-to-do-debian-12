@@ -1038,17 +1038,18 @@ After installing Oh My Zsh, you can add plugins like:
 
 
 
-
+```bash
 
 zsh-autosuggestions
+```
 
-
-
+```bash
 zsh-syntax-highlighting
+```
 
-
-
+```bash
 fzf
+```
 
 These plugins make your terminal experience faster and more productive.
 
@@ -1056,10 +1057,96 @@ These plugins make your terminal experience faster and more productive.
 
 تحديث النظام وتثبيت أدوات التحكم في الإصدارات.
 # Update system and install Git
+```bash
 sudo apt update && sudo apt install git -y
-
+```
 # Verify Git installation
+```bash
 git --version
-
+```
 # Install Curl
+```bash
 sudo apt install curl -y
+```
+# Complete Guide: Enable and Verify AppArmor on Debian
+
+### Step 1: Install AppArmor and Tools
+
+1. Update your local package index:
+   ```bash
+   sudo apt update
+   ```
+2. Install AppArmor, its utilities, and extra profiles:
+
+   ```bash
+   sudo apt install apparmor apparmor-utils apparmor-profiles apparmor-profiles-extra
+   ```
+
+### Step 2: Enable AppArmor in GRUB
+
+1. Open the default GRUB configuration file with root privileges:
+   ```bash
+   sudo nano /etc/default/grub
+   ```
+2. Locate the line starting with `GRUB_CMDLINE_LINUX_DEFAULT`.
+3. Append `apparmor=1 security=apparmor` inside the quotes. 
+   *Example before editing:*
+   ```text
+   GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+   ```
+   *Example after editing:*
+   ```text
+   GRUB_CMDLINE_LINUX_DEFAULT="quiet splash apparmor=1 security=apparmor"
+   ```
+4. Save the changes (`Ctrl+O`, then `Enter`) and exit the editor (`Ctrl+X`).
+5. Update the bootloader configurations:
+   ```bash
+   sudo update-grub
+   ```
+
+### Step 3: Enable the Service and Reboot
+
+1. Configure the service to start automatically at boot:
+   ```bash
+   sudo systemctl enable apparmor
+   ```
+2. Restart your machine to apply the kernel parameter changes:
+   ```bash
+   sudo reboot
+   ```
+
+### Step 4: Verify AppArmor Activation
+
+1. After logging back in, check that the kernel booted with the correct parameters:
+   ```bash
+   cat /proc/cmdline
+   ```
+2. Confirm that the AppArmor module is active (this command must return `Y`):
+   ```bash
+   cat /sys/module/apparmor/parameters/enabled
+   ```
+3. Check the global status and summary of active profiles:
+   ```bash
+   sudo aa-status
+   ```
+
+### Step 5: Manage and Audit Profiles
+
+All profile files are stored in the `/etc/apparmor.d/` directory.
+
+* **List all stored profiles:**
+  ```bash
+  ls /etc/apparmor.d/
+  ```
+* **Set a profile to strict mode (Active blocking / Enforce):**
+  ```bash
+  sudo aa-enforce /etc/apparmor.d/profile_name
+  ```
+* **Set a profile to test mode (Logging only / Complain):**
+  ```bash
+  sudo aa-complain /etc/apparmor.d/profile_name
+  ```
+* **Reload the configuration after making changes:**
+  ```bash
+  sudo systemctl reload apparmor
+  ```
