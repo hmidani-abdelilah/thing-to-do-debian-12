@@ -925,5 +925,42 @@ gsettings get org.gnome.mutter check-alive-timeout
 ```bash
 gsettings set org.gnome.mutter check-alive-timeout 10000
 ```
+* Node.js & NPM via NVM
 
+تثبيت بيئة عمل الجافا سكريبت باستعمال مدير الإصدارات NVM.
+
+# Download and install NVM (Node Version Manager)
+
+```bash 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+```
+
+# Refresh the shell context (No need to restart terminal)
+```bash 
+\. "$HOME/.nvm/nvm.sh"
+```
+# Download and install Node.js (Version 24)
+```bash
+nvm install 24
+```
+# Verify Node.js and NPM versions
+
+```bash 
+node -v
+npm -v
+```
+* Databases & Caching (MySQL & Redis)
+
+# Install MySQL Server
+
+```bash
+sudo apt install mysql-server -y || sudo apt install mariadb-server
+```
+
+# Install Redis Server
+
+```bash
+
+sudo apt install redis-server -y
+```
 
