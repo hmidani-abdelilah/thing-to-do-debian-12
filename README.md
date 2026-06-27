@@ -1150,3 +1150,80 @@ All profile files are stored in the `/etc/apparmor.d/` directory.
   ```bash
   sudo systemctl reload apparmor
   ```
+# Guide: Install and Configure SELinux on Debian
+
+> ⚠️ **Warning:** Proceed with caution. Switching to SELinux on Debian can sometimes break system utilities like SSH or PAM if permissions misalign during relabeling. Ensure you have alternative console access (like a cloud provider VNC console or physical access) before rebooting.
+
+### Step 1: Remove AppArmor Completely
+
+1. Stop and disable the AppArmor service:
+   ```bash
+   sudo systemctl stop apparmor
+   sudo systemctl disable apparmor
+   ```
+2. Purge the AppArmor packages from your system:
+   ```bash
+   sudo apt remove --purge apparmor apparmor-utils -y
+   ```
+3. Clean up remaining dependencies:
+   ```bash
+   sudo apt autoremove -y
+   ```
+
+### Step 2: Install SELinux Packages
+
+1. Update your local repositories:
+   ```bash
+   sudo apt update
+   ```
+2. Install the SELinux core, base policies, administration utilities, and the audit daemon:
+   ```bash
+   sudo apt install selinux-basics selinux-policy-default policycoreutils-python-utils auditd -y
+   ```
+
+### Step 3: Configure GRUB and Activate SELinux
+
+1. Use the built-in script to automatically configure your PAM module and flag the system for filesystem relabeling:
+   ```bash
+   sudo selinux-activate
+   ```
+2. Manually adjust the kernel boot parameters to remove old AppArmor configurations and enforce SELinux. Open the GRUB config:
+   ```bash
+   sudo nano /etc/default/grub
+   ```
+3. Find the `GRUB_CMDLINE_LINUX_DEFAULT` line. Remove any `apparmor=1 security=apparmor` entries, and insert `security=selinux selinux=1`:
+   *Example:*
+   ```text
+   GRUB_CMDLINE_LINUX_DEFAULT="quiet splash security=selinux selinux=1"
+   ```
+4. Save (`Ctrl+O`, `Enter`) and close the file (`Ctrl+X`).
+5. Apply the changes to the boot loader:
+   ```bash
+   sudo update-grub
+   ```
+
+### Step 4: First Reboot (Filesystem Relabeling)
+
+1. Restart your machine:
+   ```bash
+   sudo reboot
+   ```
+2. **Be patient.** During this boot sequence, the system will read all files on your drive and attach SELinux security contexts (labels) to them. If you have a large storage drive, this can take a significant amount of time. The system may automatically reboot a second time once finished.
+
+### Step 5: Verify the Status and Switch to Enforcing Mode
+
+1. After logging back in, check the operational state of SELinux:
+   ```bash
+   sestatus
+   ```
+   *Note: It will initially say `Current mode: permissive`. This tracks conflicts without blocking system processes, protecting you from an accidental lockout.*
+
+2. Once you verify that the system runs smoothly without critical login errors, permanently flip the system from **Permissive** to **Enforcing**:
+   ```bash
+   sudo nano /etc/selinux/config
+   ```
+3. Modify the policy flag from `SELINUX=permissive` to:
+   ```text
+   SELINUX=enforcing
+   ```
+4. Save the file and reboot one final time to enforce full mandatory access control protection.
