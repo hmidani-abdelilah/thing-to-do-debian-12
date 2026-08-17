@@ -1227,3 +1227,8 @@ All profile files are stored in the `/etc/apparmor.d/` directory.
    SELINUX=enforcing
    ```
 4. Save the file and reboot one final time to enforce full mandatory access control protection.
+* Améliorer la recherche de la logithèque
+```bash
+sudo apt install apt-xapian-index
+sudo update-apt-xapian-index
+```
