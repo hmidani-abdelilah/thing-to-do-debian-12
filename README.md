@@ -296,6 +296,8 @@ libreoffice_convert pdf document.docx
 sudo apt-get install libreoffice-script-provider-python
 ```
 * Libre office Extensions :
+  
+- change languagetool by [writingtool](https://writingtool.org/writingtool/releases/WritingTool-26.7.oxt) 
 
 ![libreoffice extensios](https://github.com/hmidani-abdelilah/thing-to-do-debian-12/blob/main/LibreOffice%20Extension.png)
 
